@@ -14,7 +14,8 @@ If r > l
      4. Merge the two halves sorted in step 2 and 3:
              Call merge(arr, l, m, r)
              
-2) It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
+2) Quick Sort:
+It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
 Always pick first element as pivot.
 Always pick last element as pivot (implemented below)
 Pick a random element as pivot.
@@ -33,3 +34,7 @@ quickSort(arr[], low, high)
         quickSort(arr, pi + 1, high); // After pi
     }
 }
+
+3) Dual pivot quick sort:
+The idea of dual pivot quick sort is to take two pivots, one in the left end of the array and the second, in the right end of the array. The left pivot must be less than or equal to the right pivot, so we swap them if necessary. 
+Then, we begin partitioning the array into three parts: in the first part, all elements will be less than the left pivot, in the second part all elements will be greater or equal to the left pivot and also will be less than or equal to the right pivot, and in the third part all elements will be greater than the right pivot. Then, we shift the two pivots to their appropriate positions as we see in the below bar, and after that we begin quicksorting these three parts recursively, using this method. 
